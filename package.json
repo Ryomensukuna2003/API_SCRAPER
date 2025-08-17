@@ -1,0 +1,20 @@
+{
+  "name": "api_script",
+  "version": "1.0.0",
+  "description": "Extracting leaked API's from github.com",
+  "license": "ISC",
+  "author": "Lord Shivanshu Mishra",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.14.0",
+    "dotenv": "^17.2.1",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.14.0"
+  }
+}
