@@ -5,6 +5,16 @@ import dotenv from "dotenv";
 import { regexes, envRegexes } from "./utils/regexs.js";
 import { searchStrategies } from "./utils/searchStrategies.js";
 import { handleDataEntry } from "./utils/handleDBcalls.js";
+import express from "express";
+import cors from "cors";
+
+// Initialize Express app
+const app = express();
+app.use(express.json());
+app.use(cors({ origin: "*" }));
+
+const PORT = process.env.PORT || 3000;
+
 
 dotenv.config();
 
@@ -204,3 +214,11 @@ main();
 
 // Run every 10 minutes
 setInterval(main, 10 * 60 * 1000);
+
+app.get("/", (req, res) => {
+    res.send("API Leak Scanner is running!");
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
