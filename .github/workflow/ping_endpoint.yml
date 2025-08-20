@@ -1,0 +1,13 @@
+name: Ping API Endpoint Every 5 Minutes
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-endpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API Endpoint
+        run: curl -s https://api-scraper-aiv1.onrender.com
