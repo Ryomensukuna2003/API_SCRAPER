@@ -1,10 +1,9 @@
 import { PrismaClient } from "../generated/prisma/index.js";
 import dotenv from "dotenv";
+import { red, reset } from "../utils/colors.js"
 
-dotenv.config();    
+dotenv.config();
 
-const red = '\x1b[31m';
-const reset = '\x1b[0m';
 
 const globalForPrisma = globalThis
 
@@ -21,7 +20,7 @@ export const handleDataEntry = async (API_KEY_DATA) => {
         });
 
         if (existingKey) {
-            console.log(`🔄 API key already exists in database: ${API_KEY_DATA.api_name}`);
+            console.log(`API key already exists in database: ${API_KEY_DATA.api_name}`);
             return existingKey;
         }
 

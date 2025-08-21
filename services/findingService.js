@@ -1,3 +1,8 @@
+import { delay } from "../utils/utils.js";
+import { logFinding } from "./logWritingService.js";
+import { regexes, envRegexes } from "../utils/regexs.js";
+import { red, green, blue, yellow, reset } from "../utils/colors.js";
+
 const analyzeCommit = async (commitUrl) => {
     try {
         await delay(3000); // Increased rate limiting to 3 seconds
@@ -54,4 +59,4 @@ const analyzeCommit = async (commitUrl) => {
     }
 };
 
-export { analyzeCommit, verifyToken, searchStrategy, delay };
+export { analyzeCommit };
